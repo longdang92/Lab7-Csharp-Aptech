@@ -8,14 +8,6 @@ using NSBookTest;
 
 namespace NSBooks
 {
-    //class Program
-    //{
-    //    static void Main(string[] args)
-    //    {
-    //    }
-    //}
-    //bo cho nay di
-
     interface IBook
     {
         //Properties
@@ -130,6 +122,8 @@ namespace NSBookTest
     {
         static void Main(string[] args)
         {
+ 
+ 			BookList[] blist = new BookList[5];
 
             Console.WriteLine("Please select an options:");
             Console.WriteLine("1. Insert new book ...");
@@ -142,10 +136,17 @@ namespace NSBookTest
             switch (x)
             {
                 case 1:
-                    Book bk = new Book();
+                    blist[cid] = new Book();
+                    DateTime dt= new DateTime.Now;
                     Console.WriteLine("Input book's info: ");
-                    bk.PriceList[cid] = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Name: "+Console.ReadLine());
+                    blist[cid].ID++;
+                    Console.WriteLine("Name: ");
+                    blist[cid].Name = Console.ReadLine();
+                    blist[cid].Publishdate = dt;
+                    Console.WriteLine("Author: ");
+                    blist[cid].Author = Console.ReadLine();
+                    Console.WriteLine("Language: ");
+                    blist[cid].Language = Console.ReadLine();
                     cid++;
                     break;
                 default:
